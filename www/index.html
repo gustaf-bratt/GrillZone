@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="js/libs/jquery-mobile/jquery.mobile-1.4.2.min.css"/>
+        <link rel="stylesheet" href="css/jQMProgressBar.css"/>
+        <link rel="stylesheet" type="text/css" href="css/mytheme.css" />
+        <script src="js/libs/jquery/jquery-1.9.1.js"></script>
+        <script src="js/libs/jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
+        <script src="js/libs/jquery-mobile/jquery.url.js"></script>
+        <script src="js/libs/jQMProgressBar.js"></script>
+        <script src="js/libs/jquery.base64.js"></script>
+        <script src="js/date.format.js"></script>
+        <script src="js/jstelnumbers.js"></script>
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>TakeawayDemo</title>
+    </head>
+    <body>
+        <div data-role="page" id="pageflashScreen">
+            <div data-role="main" >
+                <div id="flashimage"><img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png" /></div>
+            </div>
+        </div>
+        <div data-role="page" id="pageLogin">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b">Login</div>
+                    <div class="ui-block-c"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id="login_error"></div>
+                <form>
+                    <div id="login_form">
+
+                        <label for="txt_username">Email :</label>
+                        <input type="text" id="txt_username" name="name_email" placeholder="Email" />  
+                        <label for="pwd_password">Password :</label>
+                        <input type="password" name="name_password" id="pwd_password" />
+
+                    </div>
+                    <div data-role="navbar" >
+                        <ul>
+                            <li><a href="#" class="ui-btn ui-btn-c" id="btn_usrname_login" >Login</a></li>
+                            <li><a href="#pageUserRegister" class="ui-btn ui-btn-b" id="btn_test_login">Sign Up</a></li>
+                        </ul>
+                    </div>
+                </form>
+                <div id="errormsg"></div>
+                <div id="forgot_pswd">
+                    <a href="#pageForgottenPassword" >Forgot Password</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed"></div>
+        </div>
+        <div data-role="page" id="pageForgottenPassword">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b">Forgot Password</div>
+                    <div class="ui-block-c"><a href="#pageLogin" class="ui-btn ui-btn-b ui-btn-inline ui-mini " >Login</a></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id="forgot_pswd_err"></div>
+                <form>
+                    <label for="txt_email_send"><strong>Enter the e-mail address associated with your account. Click submit to have your password e-mailed to you</strong></label>
+                    <input type="text" id="txt_email_send" name="name_email_send" placeholder="Email" />
+                    <a href="#" class="ui-btn ui-btn-c" id="btn_email_send" >Submit</a>
+                </form>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageOffers">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b">Offers</div>
+                    <div class="ui-block-c"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id="offers_container"> </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="pageHome" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b">Menu</div>
+                    <div class="ui-block-c btn_checkout"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="cat_menu">
+                    <ul data-role="listview" id="c1" data-inset="true" ></ul>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b"  data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageLoading" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b">Updating Menu</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content" >
+                <div id="progressbar" ></div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+            </div>
+        </div>
+        <div data-role="page" id="pageUserRegister">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b">Registration</div>
+                    <div class="ui-block-c"><a href="#pageLogin" class="ui-btn ui-btn-b ui-btn-inline ui-mini " >Login</a></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="reg_msg"></div>
+                <div id="reg_form">
+                    <label for="txt_fname">* First Name</label>
+                    <input type="text" id="txt_fname" name="name_fname"  value=""/> 
+                    <label for="txt_lname">* Last Name</label>
+                    <input type="text" id="txt_lname" name="name_lname"  value=""/>  
+                    <label for="txt_address">* Address</label>
+                    <textarea name="name_address" id="txt_address" ></textarea>
+                    <label for="txt_phone">* Telephone <span id="reg_invalid_phone"></span></label>
+                    <input type="text" id="txt_phone" name="name_phone"  value=""/>  
+                    <label for="txt_postcode">* Post Code<span id="reg_address_error"></span></label>
+                    <input type="text" id="txt_postcode" name="name_postcode"  value=""/>
+                    <label for="txt_email">* Email<span id="reg_invalid_email"></span></label>
+                    <input type="text" id="txt_email" name="name_email"  value=""/>
+                    <label for="txt_password">* Password</label>
+                    <input type="password" id="txt_password" name="name_password"  value="" data-clear-btn="true"/> 
+                    <label for="txt_conf_password">* Confirm Password<span id="reg_pswd_mismatch"></span></label>
+                    <input type="password" id="txt_conf_password" name="name_password"  value=""/> 
+                    <a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="btn_register">Register</a>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed"></div>
+        </div>
+        <div data-role="page" id="pageProducts">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a" ><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b prod_name_head"></div>
+                    <div class="ui-block-c btn_checkout" ></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="test"></div>
+                <div  id="product_container">
+                    <ul data-role="listview" data-split-icon="plus" data-split-theme="d" data-inset="true" id="p1" ></ul>
+                </div>
+                <div data-role="popup" id="popupProductDescr" data-overlay-theme="b"  data-dismissible="true" >
+                    <a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-icon-delete ui-btn-icon-notext ui-corner-all ui-shadow ui-btn-left" data-rel="back" >Close</a>
+                    <div data-role="content">
+                        <div id="prd_description"></div>
+                    </div>
+                </div>
+                <div data-role="popup" id="popup_delete_item" data-overlay-theme="a" data-theme="b" style="max-width:400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                        <h1>Remove Item ?</h1>
+                    </div>
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title">Are you sure you want to remove this item from cart?</h3>
+                        <p>This action cannot be undone.</p>
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b" class="delete_ok">OK</a>    
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">Cancel</a>  
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageProductsOptions" data-overlay-theme="b">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a" ><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b prod_name_head"></div>
+                    <div class="ui-block-c btn_checkout" ></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form id="formprodutOption">
+                    <input type="hidden" name="product_id" value="" /> 
+                    <input type="hidden" name="quantity" value="1" />
+                    <div  id="addtocart" >
+                        <a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-mini popup_cancel_btn" data-rel="back">Back</a>
+                        <a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="btn_addtocart" >Add To Cart</a>
+                    </div>
+                    <div class="ui-grid-solo" id="products_option" ></div>
+                </form>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageBundled">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu" >Menu</a> </div>
+                    <div class="ui-block-b prod_bundle_name"></div>
+                    <div class="ui-block-c btn_checkout"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form id="formprodutBundleOption">
+                    <input type="hidden" name="product_id" value="" /> 
+                    <input type="hidden" name="quantity" value="1" />
+                    <div  id="bundled_items"></div>
+                </form>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageCart">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu" >Menu</a> </div>
+                    <div class="ui-block-b">Cart</div>
+                    <div class="ui-block-c next_btn"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="cart_container" >
+                    <div id="trigger">
+                        <div id="div_coupon"></div>
+                        <div id="div_coupon_error"></div>
+                        <div id="div_voucher"></div>
+                        <div id="div_voucher_error"></div>
+                        <div id="div_reward"></div>
+                        <div id="div_reward_error"></div>
+                        <div id="error_textbox"></div>
+                    </div>
+                    <div id="div_submit"></div>
+                    <div id="table_products" data-role="mini">
+                    </div>
+                    <div class="ui-grid-solo" id="product-epos-productoptions"  ></div>
+                    <div class="ui-grid-b" id="product-epos-total"  >
+                    </div>
+                    <div class="error" ></div>
+                </div>
+                <div data-role="popup" id="deleteConfirm" data-overlay-theme="a" data-theme="b" style="max-width:400px;" class="ui-corner-all">
+                    <div data-role="header" data-theme="b" class="ui-corner-top">
+                        <h1>Remove Item ?</h1>
+                    </div>
+                    <div data-role="content" data-theme="a" class="ui-corner-bottom ui-content">
+                        <h3 class="ui-title">Are you sure you want to remove this item from cart?</h3>
+                        <p>This action cannot be undone.</p>
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="b" class="delete_item_ok">OK</a>    
+                        <a href="#" data-role="button" data-inline="true" data-rel="back" data-transition="flow" data-theme="b">Cancel</a>  
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageShipping">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-mini ui-btn-inline" id="btn_back_chkout">Back</a></div>
+                    <div class="ui-block-b ">Checkout</div>
+                    <div class="ui-block-c "><a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="btn_review" >Confirm Order</a></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <form id="form_shipcontainer">
+                    <div id="ship_method"></div>
+                    <div id="payment_method"></div>
+                    <div id="requested_time"></div>
+                    <label>Delivery Address : </label>
+                    <div id="ship_addr"><ul data-role="listview" data-inset="true"></ul></div>
+                </form>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageConfirm">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu" >Menu</a></div>
+                    <div class="ui-block-b ">Confirm Order</div>
+                    <div class="ui-block-c "> </div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="review_data"></div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pagePayment">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a" ></div>
+                    <div class="ui-block-b ">Payment</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="payment_proccess_msg"></div>
+                <div id="payment_processes"></div>
+                <div id="payment_continue"></div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+
+            </div>
+        </div>
+        <div data-role="page" id="pageEdit">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b  ui-icon-home ui-btn-icon-left btn_menu" >Menu</a> </div>
+                    <div class="ui-block-b ">Edit Account</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="edit_details"><div id="edit_msg"></div>
+                    <form>
+                        <label for="fname">First Name</label>
+                        <input type="text" name="fname" id="fname" >
+                        <label for="lname">Last Name</label>
+                        <input type="text" data-clear-btn="true" name="lname" id="lname">
+                        <label for="email">Email<span id="edit_invalid_email"></span></label>
+                        <input type="text" name="email" id="email" value="">
+                        <label for="telephone">Telephone<span id="edit_invalid_phone"></span></label>
+                        <input type="text" data-clear-btn="true" name="telephone" id="telephone" >
+                        <div><a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="submit_edit_acc" >Submit</a>
+                            <a href="#pageHome" class="ui-btn ui-btn-inline ui-mini">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageAddress">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu" >Menu</a> </div>
+                    <div class="ui-block-b ">Address</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="cust_address_list">
+                    <ul data-role="listview" data-inset="true"></ul>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="dialogPageAddress" data-dialog="true">
+            <div data-role="header" class="header_container">
+                <h1>Addresses</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="address_msg"></div>
+                <div class="cust_address_lists">
+                    <ul data-role="listview" data-inset="true"></ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageAddAddress">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Address</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="new_address_error"></div>
+                <div id="edit_details">
+                    <form>
+                        <label for="newfname">First Name:</label>
+                        <input type="text" name="newfname" id="newfname" >
+                        <label for="newlname">Last Name</label>
+                        <input type="text" data-clear-btn="true" name="newlname" id="newlname">
+                        <label for="newtelephone">Telephone<span id="addaddr_invalid_phone"></span></label>
+                        <input type="text" data-clear-btn="true" name="newtelephone" id="newtelephone" >
+                        <label for="newaddress1">Address</label>
+                        <textarea name="newaddress1" id="newaddress1" ></textarea>
+                        <label for="newpostcode">Post Code<span id="addaddr_invalid_post"></span></label>
+                        <input type="text" data-clear-btn="true" name="newpostcode" id="newpostcode" ><div class="error_postcode"></div>
+                        <div><a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="submit_add_address" >ADD</a>
+                            <a href="#pageHome" class="ui-btn ui-btn-inline ui-mini" >Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageEditAddress">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Edit Address</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div class="edit_address_error"></div>
+                <div id="edit_address">
+                    <form>
+                        <label for="editfname">First Name:</label>
+                        <input type="text" name="editfname" id="editfname" >
+                        <label for="editlname">Last Name</label>
+                        <input type="text" data-clear-btn="true" name="editlname" id="editlname">
+                        <label for="editaddress1">Address </label>
+                        <textarea name="editaddress1" id="editaddress1" ></textarea>
+                        <label for="editpostcode">Post Code<span id="addr_invalid_post"></span></label>
+                        <input type="text" data-clear-btn="true" name="editpostcode" id="editpostcode" >
+                        <div><a href="#" class="ui-btn ui-btn-inline ui-mini" id="submit_edit_address">ADD</a>
+                            <a href="#pageHome" class="ui-btn ui-btn-inline ui-mini" >Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="pageChangePassword">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Change Password</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="pswd_edit_details">
+                    <form>
+                        <div id="pswd_mismatch"></div>
+                        <label for="pswd">Password:</label>
+                        <input type="password" name="pswd" id="pswd" data-clear-btn="true" placeholder="Password" >
+                        <label for="confirm_pswd">Confirm Password:</label>
+                        <input type="password" data-clear-btn="true" name="confirm_pswd" id="confirm_pswd" placeholder="Confirm Password" >
+                        <div>
+                            <a href="#" class="ui-btn ui-btn-c ui-btn-inline ui-mini" id="submit_edit_pswd">Submit</a>
+                            <a href="#pageHome" class="ui-btn ui-btn-b ui-btn-inline ui-mini" >Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+        <div data-role="page" id="pageHistory">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Order History</div>
+                    <div class="ui-block-c btn_checkout"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="div_orderhistory"><ul data-role="listview" data-inset="true" ></ul>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed" >
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+        <div data-role="page" id="pageOrderStatus">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Order Status</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="orderstatus"></div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+        <div data-role="page" id="pageViewOrders">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Order Details</div>
+                    <div class="ui-block-c "><a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-mini" data-rel="back">Back</a></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="viewOrders">
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>   
+        <div data-role="page" id="pageRewards">
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Reward Points</div>
+                    <div class="ui-block-c btn_checkout"></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="rewardpoints"></div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageSmartDeals" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Deals Available</div>
+                    <div class="ui-block-c "><a href="#" class="ui-btn ui-btn-b ui-btn-inline ui-mini btn_dealskip" >Next</a></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="smartdeals"></div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageSettings" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Settings</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="account_details">
+                    <h3>Account Information</h3><div id="acc_info"></div>
+                    <div id="acc_info_address"></div>
+                </div>
+                <div data-role="popup" id="popupRemoveAccount" data-overlay-theme="b"  data-dismissible="false" style="max-width:400px;">
+                    <div data-role="header" data-theme="b">
+                        <h2>Remove Account ?</h2>
+                    </div>
+                    <div role="main" class="ui-content">
+                        <h3 class="ui-title">Are you sure you want to Remove Account from App</h3>
+                        <p>This action cannot be undone.?</p>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-c" id="btn_confirm_remove">Yes</a>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">No</a>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageInfo" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b ">Store Details</div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="storeinfo">
+                    <div id="opening_hours"></div>
+                    <br/><br/>
+                    <div id="contact"></div>
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageOrderSuccess" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"><a href="#" class="ui-btn ui-btn-b ui-icon-home ui-btn-icon-left btn_menu">Menu</a> </div>
+                    <div class="ui-block-b "></div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <div id="order_success">
+                </div>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="page" id="pageError" >
+            <div data-role="header" class="header_container">
+                <div class="logo">
+                    <img alt="eTakewayMax Takeway" title="eTakewayMax Takeway" src="images/logo.png"/>
+                </div>
+                <div class="ui-grid-b" >
+                    <div class="ui-block-a"></div>
+                    <div class="ui-block-b "></div>
+                    <div class="ui-block-c "></div>
+                </div>
+            </div>
+            <div data-role="main" class="ui-content">
+                <label id="cosole_errors"></label>
+                <h3>Check Internet Connection and try again </h3>
+                <a href="#" class="ui-btn ui-btn-inline ui-mini" id="btn_error_continue" >Continue</a>
+            </div>
+            <div data-role="footer" data-theme="b" data-position="fixed">
+                <div data-role="navbar" class="navbar_one">
+                    <ul>
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+                <div data-role="navbar" class="navbar_second">
+                    <ul >
+                        <li class="btn_orderstatus"><a href="#" data-role="button"  data-inline="true" data-icon="shop" data-iconpos="top" >Order<span class="orderstat"></span></a></li>
+                        <li class="btn_myacc"><a href="#popup-outside-page" data-role="button"  data-inline="true"  data-icon="grid" data-iconpos="top" data-rel="popup" data-position-to="origin" data-transition="pop">Account</a></li>
+                        <li class="btn_offers"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Offers</a></li>
+                        <li class="btn_settings"><a href="#" data-role="button"  data-inline="true" data-icon="gear" data-iconpos="top" >Settings</a></li>
+                        <li class="btn_info"><a href="#" data-role="button"  data-inline="true" data-icon="info" data-iconpos="top" >Info</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div data-role="popup" id="popup-outside-page" data-dismissible="true" class="ui-content" >
+            <ul data-role="listview"  data-theme="b" >
+                <li><a href="#" id="btn_history">Order History</a></li>
+                <li><a href="#" id="btn_reward">Reward Points</a></li>
+                <li><a href="#" id="btn_edit">Edit Account</a></li>
+                <li><a href="#" id="btn_change_password">Change Password</a></li>
+                <li><a href="#" id="btn_edit_address">Address</a></li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
